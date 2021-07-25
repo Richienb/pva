@@ -13,7 +13,7 @@ npm install pva
 ## Usage
 
 ```sh
-$ pva <input...>
+$ pva <files...>
 ```
 
 ## Config

@@ -1,0 +1,82 @@
+{
+	"name": "pva",
+	"version": "0.0.0",
+	"description": "OpenAPI linter.",
+	"repository": "https://github.com/Richienb/pva.git",
+	"author": "Richie Bendall <richiebendall@gmail.com>",
+	"license": "MIT",
+	"type": "module",
+	"bin": "./dist/cli.js",
+	"exports": "./dist/index.js",
+	"files": [
+		"dist"
+	],
+	"engines": {
+		"node": ">=14.14"
+	},
+	"scripts": {
+		"build": "tsc",
+		"lint": "xo",
+		"test": "xo && ava",
+		"prepack": "tsc"
+	},
+	"keywords": [
+		"openapi",
+		"swagger",
+		"lint",
+		"validate"
+	],
+	"dependencies": {
+		"@sindresorhus/is": "^4.0.1",
+		"@stoplight/spectral": "^5.9.1",
+		"ansi-escapes": "^5.0.0",
+		"chalk": "^4.1.1",
+		"cosmiconfig": "^7.0.0",
+		"globby": "^12.0.0",
+		"ibm-openapi-validator": "^0.46.3",
+		"js-yaml": "^4.1.0",
+		"last-item": "^1.0.0",
+		"log-symbols": "^5.0.0",
+		"meow": "^10.1.0",
+		"merge-options": "^3.0.4",
+		"num-sort": "^3.0.0",
+		"p-map": "^5.1.0",
+		"parse-json": "^5.2.0",
+		"plur": "^4.0.0",
+		"string-width": "^5.0.0",
+		"strip-bom": "^5.0.0"
+	},
+	"devDependencies": {
+		"@richienb/tsconfig": "^0.3.0",
+		"@types/node": "^16.4.1",
+		"ava": "^3.15.0",
+		"eslint-config-richienb": "^0.6.2",
+		"json-schema": "^0.3.0",
+		"ts-node": "^10.1.0",
+		"type-fest": "^1.2.2",
+		"typescript": "^4.3.5",
+		"xo": "^0.42.0"
+	},
+	"xo": {
+		"extends": "richienb",
+		"overrides": [
+			{
+				"files": "source/cli.ts",
+				"rules": {
+					"unicorn/no-process-exit": "off"
+				}
+			}
+		]
+	},
+	"ava": {
+		"extensions": {
+			"ts": "module"
+		},
+		"nonSemVerExperiments": {
+			"configurableModuleFormat": true
+		},
+		"nodeArguments": [
+			"--loader=ts-node/esm"
+		]
+	}
+}

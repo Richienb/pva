@@ -4,7 +4,7 @@ const defaultConfig: Options = {
 	shared: {
 		operations: {
 			no_operation_id: "warning",
-			operation_id_case_convention: ["off", "lower_camel_case"], // TODO: Remove second array item when https://github.com/IBM/openapi-validator/pull/313 is merged
+			operation_id_case_convention: ["off"],
 			no_summary: "warning",
 			parameter_order: "error",
 			undefined_tag: "error",

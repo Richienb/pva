@@ -770,7 +770,7 @@ export function formatResults(results: Array<[string, Result]>): string {
 		hints: hints.sort((a, b) => numberSortAscending(a.line, b.line)),
 	}])
 
-	for (const [_, { errors, warnings, infos, hints }] of results) { // eslint-disable-line @typescript-eslint/no-unused-vars
+	for (const [, { errors, warnings, infos, hints }] of results) {
 		totalErrors += errors.length
 		totalWarnings += warnings.length
 		totalInfos += infos.length
@@ -794,7 +794,7 @@ export function formatResults(results: Array<[string, Result]>): string {
 	}
 
 	output += results
-		.sort(([_, a], [__, b]) => {
+		.sort(([, a], [, b]) => {
 			if (a.errors.length === b.errors.length) {
 				if (a.warnings.length === b.warnings.length) {
 					if (a.infos.length === b.infos.length) {

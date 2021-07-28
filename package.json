@@ -33,7 +33,7 @@
 		"chalk": "^4.1.1",
 		"cosmiconfig": "^7.0.0",
 		"globby": "^12.0.0",
-		"ibm-openapi-validator": "^0.46.3",
+		"ibm-openapi-validator": "^0.46.4",
 		"js-yaml": "^4.1.0",
 		"last-item": "^1.0.0",
 		"log-symbols": "^5.0.0",

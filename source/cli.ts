@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 import meow from "meow"
 import chalk from "chalk"
-import processConfig from "ibm-openapi-validator/src/cli-validator/utils/processConfiguration.js"
 import { cosmiconfig } from "cosmiconfig"
 import pMap, { pMapSkip } from "p-map"
 import { globby } from "globby"
@@ -9,12 +8,6 @@ import is from "@sindresorhus/is"
 import logSymbols from "log-symbols"
 import defaultConfig from "./config.js"
 import { lintFile, formatResults, Result, Options } from "./index.js"
-
-const { validate: validateConfig } = processConfig as {
-	validate(configObject: Options, chalk_: typeof chalk): Options & {
-		invalid: boolean
-	}
-}
 
 let { input: files, flags } = meow(`
 	Usage
@@ -52,11 +45,7 @@ async function loadConfig() {
 	}
 }
 
-const config = validateConfig(await loadConfig(), chalk)
-
-if (config.invalid) {
-	process.exit(2)
-}
+const config = await loadConfig()
 
 let isAutoDetectedFiles = false
 

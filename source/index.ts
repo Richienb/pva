@@ -605,6 +605,11 @@ export interface Options {
 			/**
 			Examples must be valid against their defined schema.
 			*/
+			"oas3-valid-media-example"?: Status
+
+			/**
+			Examples must be valid against their defined schema.
+			*/
 			"oas3-valid-schema-example"?: Status
 
 			/**

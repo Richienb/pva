@@ -1,6 +1,6 @@
 {
 	"name": "pva",
-	"version": "0.1.2",
+	"version": "0.2.0",
 	"description": "OpenAPI linter.",
 	"repository": "https://github.com/Richienb/pva.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",

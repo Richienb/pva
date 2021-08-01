@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import meow from "meow"
 import chalk from "chalk"
 import processConfig from "ibm-openapi-validator/src/cli-validator/utils/processConfiguration.js"

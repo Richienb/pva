@@ -789,7 +789,7 @@ export function formatResults(results: Array<[string, Result]>): string {
 			maxLineWidth,
 		)
 
-		for (const { message } of [...errors, ...warnings]) {
+		for (const { message } of [...errors, ...warnings, ...infos, ...hints]) {
 			maxMessageWidth = Math.max(stringWidth(message), maxMessageWidth)
 		}
 	}
